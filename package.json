@@ -1,0 +1,11 @@
+{
+  "name": "cp-promptx",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./resources/css/input.css -o ./public/css/app.css --minify",
+    "watch": "tailwindcss -i ./resources/css/input.css -o ./public/css/app.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
