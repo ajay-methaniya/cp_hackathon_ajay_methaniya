@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS call_notes (
+    id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    call_id     INT UNSIGNED NOT NULL,
+    user_id     INT UNSIGNED NOT NULL,
+    note        TEXT NOT NULL,
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (call_id) REFERENCES calls(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

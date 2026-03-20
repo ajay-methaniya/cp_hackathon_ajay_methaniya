@@ -1,0 +1,6 @@
+; Copy to .user.ini in this folder if PHP-FPM/Apache allows per-dir overrides.
+; Helps large audio uploads (must be >= your MAX_UPLOAD_SIZE_MB in .env).
+upload_max_filesize = 100M
+post_max_size = 105M
+max_execution_time = 300
+max_input_time = 300

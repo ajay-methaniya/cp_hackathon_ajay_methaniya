@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS transcripts (
+    id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    call_id     INT UNSIGNED NOT NULL UNIQUE,
+    raw_text    LONGTEXT NOT NULL,
+    segments    JSON NULL,
+    language    VARCHAR(10) DEFAULT 'en',
+    created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (call_id) REFERENCES calls(id) ON DELETE CASCADE
+);

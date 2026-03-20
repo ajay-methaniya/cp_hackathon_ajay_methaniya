@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+
+    # If the app lives in a subfolder, uncomment and set (trailing slash required):
+    # RewriteBase /hackathon/cp-promptx/public/
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

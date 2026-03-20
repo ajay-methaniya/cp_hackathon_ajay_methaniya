@@ -1,0 +1,26 @@
+You are building a production PHP 8.2 application called CP Prompt-X — an AI Call Intelligence Platform.
+
+ALWAYS:
+- Use PDO with prepared statements for all database queries
+- Sanitize output with htmlspecialchars() before rendering
+- Validate MIME types for file uploads (not just extensions)
+- Add meaningful PHP docblocks to all methods
+- Use typed properties and return types in PHP classes
+- Handle API errors gracefully with try/catch and user-friendly messages
+- Keep controllers thin — business logic belongs in Services
+- Use Alpine.js x-data directives for interactive UI components
+- Use Chart.js for all data visualizations
+
+NEVER:
+- Use raw SQL string concatenation
+- Store sensitive data in localStorage
+- Trust $_FILES['type'] for MIME validation — always use finfo
+- Write JavaScript that blocks the main thread during API calls
+- Skip error handling on OpenAI API calls (they can fail/timeout)
+- Use inline styles — use Tailwind utility classes instead
+
+FILE STRUCTURE CONVENTION:
+- Controllers: handle HTTP request/response only
+- Services: contain business logic and external API calls
+- Models: contain database CRUD operations
+- Views: contain only HTML/PHP templating, no logic

@@ -1,0 +1,14 @@
+/vendor/
+/node_modules/
+.env
+/public/uploads/**
+!/public/uploads/.gitkeep
+/storage/audio/**
+!/storage/audio/.gitkeep
+/storage/logs/**
+!/storage/logs/.gitkeep
+/storage/cache/**
+!/storage/cache/.gitkeep
+/storage/ratelimit/**
+!/storage/ratelimit/.gitkeep
+package-lock.json

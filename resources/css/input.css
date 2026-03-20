@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-slate-200 antialiased;
+    background-color: #0b0c10;
+    background-image:
+      radial-gradient(ellipse 100% 60% at 50% -15%, rgba(79, 110, 247, 0.09), transparent 50%),
+      linear-gradient(180deg, #0f1117 0%, #0a0b0f 55%, #0f1117 100%);
+    background-attachment: fixed;
+  }
+
+  body.theme-light {
+    @apply text-slate-800;
+    background-color: #eff3f8;
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% -20%, rgba(79, 110, 247, 0.12), transparent 58%),
+      linear-gradient(180deg, #f9fbff 0%, #eef2f8 55%, #f3f6fb 100%);
+  }
+}
+
+@layer components {
+  /* Calls list + shared dark controls */
+  .cx-input {
+    @apply w-full rounded-lg bg-[#12141c] text-slate-100 text-sm px-3 py-2 outline-none transition-shadow;
+    @apply ring-1 ring-inset ring-white/[0.07] focus:ring-2 focus:ring-brand-500/35;
+  }
+  .cx-input::placeholder {
+    @apply text-slate-600;
+  }
+  .cx-btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white;
+    @apply shadow-lg shadow-brand-600/20 transition hover:bg-brand-500 hover:shadow-brand-500/25;
+  }
+  .cx-btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium text-slate-400;
+    @apply transition hover:bg-white/[0.04] hover:text-slate-200;
+  }
+  .cx-pill {
+    @apply inline-flex items-center rounded-md px-2 py-0.5 text-[11px] font-medium tracking-wide;
+  }
+
+  /* Call detail — conversation transcript */
+  .cx-msg {
+    @apply rounded-xl px-4 py-3 text-[13px] leading-relaxed transition-colors;
+  }
+  .cx-msg--0 {
+    @apply bg-brand-500/[0.07] ring-1 ring-inset ring-brand-500/15 border-l-[3px] border-brand-500/60 mr-0 md:mr-12;
+  }
+  .cx-msg--1 {
+    @apply bg-slate-700/25 ring-1 ring-inset ring-white/10 border-l-[3px] border-slate-400/45 ml-0 md:ml-12;
+  }
+  .cx-msg-meta {
+    @apply flex flex-wrap items-center gap-2 mb-1.5;
+  }
+  .cx-msg-time {
+    @apply text-[10px] font-mono font-medium text-sky-300 tabular-nums rounded-md bg-black/25 px-1.5 py-0.5 cursor-pointer hover:bg-brand-500/20 hover:text-white transition-colors;
+  }
+  .cx-msg-speaker {
+    @apply text-[11px] font-semibold uppercase tracking-wider text-slate-500;
+  }
+  .cx-msg-body {
+    @apply text-slate-200/95;
+  }
+  .cx-msg mark {
+    @apply bg-amber-400/35 text-amber-50 rounded px-0.5;
+  }
+}
+
+/* Light theme overrides for existing utility-heavy templates */
+body.theme-light .bg-surface,
+body.theme-light .bg-surface-card,
+body.theme-light .bg-surface-card\/30,
+body.theme-light .bg-surface-card\/35,
+body.theme-light .bg-surface-card\/50,
+body.theme-light .bg-surface-card\/95 {
+  background-color: #ffffff !important;
+}
+body.theme-light .bg-surface-hover,
+body.theme-light .bg-surface-hover\/50,
+body.theme-light .bg-surface-hover\/80,
+body.theme-light .bg-surface\/40,
+body.theme-light .bg-surface\/60,
+body.theme-light .bg-surface\/80,
+body.theme-light .bg-black\/10,
+body.theme-light .bg-black\/15,
+body.theme-light .bg-black\/20,
+body.theme-light .bg-black\/25,
+body.theme-light .bg-black\/60 {
+  background-color: rgba(148, 163, 184, 0.12) !important;
+}
+body.theme-light [class*="border-surface-border"],
+body.theme-light [class*="ring-white/"],
+body.theme-light [class*="divide-surface-border"] {
+  border-color: rgba(15, 23, 42, 0.16) !important;
+}
+body.theme-light main {
+  color: #0f172a;
+}
+body.theme-light .text-white {
+  color: #0f172a !important;
+}
+body.theme-light .text-slate-200,
+body.theme-light .text-slate-300,
+body.theme-light .text-slate-400 {
+  color: #1e293b !important;
+}
+body.theme-light .text-slate-100 {
+  color: #0f172a !important;
+}
+body.theme-light .text-slate-500,
+body.theme-light .text-slate-600 {
+  color: #64748b !important;
+}
+body.theme-light .placeholder-slate-600::placeholder {
+  color: #64748b !important;
+}
+body.theme-light .shadow-glow {
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08) !important;
+}
+body.theme-light aside {
+  background: rgba(248, 250, 252, 0.96) !important;
+}
+body.theme-light aside a,
+body.theme-light aside button,
+body.theme-light aside p {
+  color: #334155;
+}
+body.theme-light header {
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+body.theme-light .rounded-xl,
+body.theme-light .rounded-2xl {
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02), 0 10px 20px rgba(15, 23, 42, 0.05);
+}
+body.theme-light table thead {
+  background: rgba(241, 245, 249, 0.95) !important;
+}
+body.theme-light table tbody tr:hover {
+  background: rgba(226, 232, 240, 0.5) !important;
+}
+body.theme-light .cx-input {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+  --tw-ring-color: rgba(15, 23, 42, 0.18) !important;
+}
+body.theme-light .cx-btn-ghost {
+  color: #334155 !important;
+}
+body.theme-light .bg-brand-500.text-white,
+body.theme-light .bg-brand-600.text-white,
+body.theme-light .bg-brand-700.text-white,
+body.theme-light .bg-positive.text-white,
+body.theme-light .bg-negative.text-white,
+body.theme-light .bg-neutral.text-white,
+body.theme-light .bg-amber-500.text-white,
+body.theme-light .cx-btn-primary,
+body.theme-light .cx-btn-primary * {
+  color: #ffffff !important;
+}
+body.theme-light .text-brand-300,
+body.theme-light .text-brand-400,
+body.theme-light .text-brand-500 {
+  color: #3657d6 !important;
+}
+body.theme-light .text-positive {
+  color: #15803d !important;
+}
+body.theme-light .text-negative {
+  color: #b91c1c !important;
+}
+body.theme-light .text-neutral,
+body.theme-light .text-amber-400 {
+  color: #a16207 !important;
+}
+body.theme-light .text-emerald-200,
+body.theme-light .text-emerald-300 {
+  color: #166534 !important;
+}
+body.theme-light .text-rose-200 {
+  color: #9f1239 !important;
+}
+body.theme-light .text-amber-200,
+body.theme-light .text-amber-100 {
+  color: #92400e !important;
+}
+body.theme-light .text-sky-300 {
+  color: #1d4ed8 !important;
+}
+
+/* Better pill readability in light mode */
+body.theme-light .bg-emerald-500\/16,
+body.theme-light .bg-emerald-500\/18 {
+  background-color: rgba(16, 185, 129, 0.22) !important;
+}
+body.theme-light .bg-rose-500\/12,
+body.theme-light .bg-rose-500\/14,
+body.theme-light .bg-rose-500\/15 {
+  background-color: rgba(244, 63, 94, 0.22) !important;
+}
+body.theme-light .bg-amber-500\/10,
+body.theme-light .bg-amber-500\/12,
+body.theme-light .bg-amber-500\/14 {
+  background-color: rgba(245, 158, 11, 0.24) !important;
+}
+body.theme-light .ring-emerald-500\/20,
+body.theme-light .ring-emerald-500\/25,
+body.theme-light .ring-rose-500\/25,
+body.theme-light .ring-amber-500\/20 {
+  --tw-ring-color: rgba(15, 23, 42, 0.15) !important;
+}
+body.theme-light .cx-msg--0 {
+  background: rgba(79, 110, 247, 0.08) !important;
+}
+body.theme-light .cx-msg--1 {
+  background: rgba(148, 163, 184, 0.14) !important;
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #0f172a !important;
+  }
+  aside,
+  header,
+  .print\:hidden {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  #call-analysis-root [x-show] {
+    display: block !important;
+  }
+  .shadow-glow {
+    box-shadow: none !important;
+  }
+}
